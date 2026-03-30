@@ -1,3 +1,44 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Rebirth Mania Script 🎁",
+   LoadingTitle = "Itay Hub",
+   LoadingSubtitle = "by Itay",
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil,
+      FileName = "Big Hub"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "noinvitelink",
+      RememberJoins = true
+   },
+   KeySystem = true,
+   KeySettings = {
+      Title = "Rebirth Mania | key 🔑 ",
+      Subtitle = "Key System",
+      Note = "No method of obtaining the key is provided",
+      FileName = "Key",
+      SaveKey = true,
+      GrabKeyFromSite = true,
+      Key = {"https://pastebin.com/raw/WXng6d0M"}
+   }
+})
+
+local MainTab = Window:CreateTab("🎁Home", nil)
+local MainSection = MainTab:CreateSection("Teleport")    
+
+Rayfield:Notify({
+   Title = "You executed the script",
+   Content = "GL",
+   Duration = 5,
+})
+
+----------------------------------------------------
+-- 🔥 AUTO FARM BOSS 18
+----------------------------------------------------
+
 local AutoFarm = false
 
 MainTab:CreateToggle({
@@ -17,9 +58,9 @@ MainTab:CreateToggle({
                local userId = player.UserId
 
                local modelsFolder = workspace:WaitForChild("RunningModels")
-               local target = workspace:WaitForChild("CollectZones"):WaitForChild("base14") -- זה הבוס 18
+               local target = workspace:WaitForChild("CollectZones"):WaitForChild("base14")
 
-               -- טלפורט להתחלה
+               -- טלפורט התחלה
                root.CFrame = CFrame.new(715, 39, -2122)
                task.wait(0.3)
 
@@ -51,7 +92,7 @@ MainTab:CreateToggle({
 
                task.wait(0.7)
 
-               -- דוחף פנימה (כדי שייקלט)
+               -- דחיפה פנימה
                if ownedModel and ownedModel.Parent == modelsFolder then
                   if ownedModel.PrimaryPart then
                      ownedModel:SetPrimaryPartCFrame(target.CFrame * CFrame.new(0, -5, 0))
